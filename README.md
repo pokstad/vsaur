@@ -19,8 +19,8 @@ This will install the `vsaur` executable at `$GOPATH/src/go/bin/vsaur`. If your 
 
 Or you can download a release copy from the GitHub page.
 
-# Usage
-Simply run the `vsaur` command in a Go module you wish to validate:
+## Usage
+Simply run the `vsaur` command in the top level directory of a Go module you wish to validate:
 
 ```
 $ $GOPATH/bin/vsaur
@@ -30,26 +30,26 @@ For a current and complete list of command options, view the command's Go doc st
 
 ```
 $ go doc github.com/pokstad/vsaur/cmd/vsaur
-Command vsaur
+Command vsaur provides static analysis tools for automating best practices
+related to versioned Go modules.
 
 Usage:
 
 To analyze everything in a project, simply run vsaur while in a project
 directory. This will run all possible checks.
 
-    vsaur
+    $ vsaur
     TODO: sample output of vsaur running all checks
 
 To only run a subset of checks, provides the -checks flag with a comma
 delimited list of check names:
 
-    vsaur -checks mod-local-replaces,sum-overflow
+    $ vsaur -checks mod-local-replaces,sum-overflow
     TODO: sample output of vsaur running selective checks
 
 By default, vsaur will look for a file in the current directory named
-.vsaur.json to load a JSON formatted configuration instead of relying on
-flags. Or specify a config file path of your choosing with the flag
--config:
+".vsaur.json" to load a JSON formatted configuration instead of relying on
+flags. Or specify a config file path of your choosing with the flag -config:
 
-    vsaur -config .vsaur-release.json
+    $ vsaur -config .vsaur-release.json
 ```
