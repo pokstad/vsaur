@@ -17,7 +17,7 @@ Vendorsaurus requires Go 1.11 or higher. To install, go get it:
 
 `go get -u github.com/pokstad/vsaur/cmd/vsaur`
 
-This will install the `vsaur` executable at `$GOPATH/src/go/bin/vsaur`. If your `$GOPATH` environment variable is not set, by default it will be `$HOME/go`.
+This will install the `vsaur` executable at `$GOPATH/bin/vsaur`. If your `$GOPATH` environment variable is not set, by default it will be `$HOME/go`.
 
 Or you can download a release copy from the GitHub page.
 
