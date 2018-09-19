@@ -6,7 +6,7 @@ jobs:
   build:
     docker:
       # specify the version
-      - image: pokstad/godockci:0.0.1
+      - image: pokstad/godockci:0.0.2
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
