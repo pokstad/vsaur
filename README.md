@@ -1,7 +1,12 @@
-[![CircleCI](https://circleci.com/gh/pokstad/vsaur/tree/master.svg?style=svg)](https://circleci.com/gh/pokstad/vsaur/tree/master) [![GoDoc](https://godoc.org/github.com/pokstad/vsaur?status.svg)](https://godoc.org/github.com/pokstad/vsaur)
-
 # VSaur = Vendorsaurus
 VSaur is shorthand for Vendorsaurus. Vendorsaurus is collection of utilities for maintaining versioned Go modules (a.k.a. vgo) usage in a project. It is designed to be used in CI/CD systems to automate best practices.
+
+| Info | Link |
+|---|---|
+| master head build status | [![CircleCI](https://circleci.com/gh/pokstad/vsaur/tree/master.svg?style=svg)](https://circleci.com/gh/pokstad/vsaur/tree/master) |
+| command documentation | [![GoDoc](https://godoc.org/github.com/pokstad/vsaur/cmd/vsaur?status.svg)](https://godoc.org/github.com/pokstad/vsaur/cmd/vsaur) |
+| library documentation | [![GoDoc](https://godoc.org/github.com/pokstad/vsaur?status.svg)](https://godoc.org/github.com/pokstad/vsaur) |
+
 
 ## Features
 Planned features:
