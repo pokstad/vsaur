@@ -2,11 +2,15 @@ package vsaur
 
 import (
 	"context"
+	"io/ioutil"
+	"log"
 	"path/filepath"
+
+	"github.com/pokstad/vsaur/internal/modfile"
 )
 
 // ModFileName is the standard file name for a Go module file
-const ModFileName = "go.mod"
+const modFileName = "go.mod"
 
 // localReplaceChecker checks that a mod file does not contain replace
 // statements that reference a local file path
@@ -16,7 +20,7 @@ type localReplaceChecker struct {
 
 func newLocalReplaceChecker(moddir string) Checker {
 	return localReplaceChecker{
-		modfile: filepath.Join(moddir, "mod.file"),
+		modfile: filepath.Join(moddir, modFileName),
 	}
 }
 
@@ -29,6 +33,20 @@ func (localReplaceChecker) CheckName() string {
 // to replace statements containing local file paths
 func (lrc localReplaceChecker) Check(ctx context.Context) ([]Issue, error) {
 	var issues []Issue
+
+	data, err := ioutil.ReadFile(lrc.modfile)
+	if err != nil {
+		return nil, err
+	}
+
+	mf, err := modfile.Parse(lrc.modfile, data, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	// TODO: replace following with actual check
+	log.Printf("mf: %#v", mf)
+
 	return issues, nil
 }
 
