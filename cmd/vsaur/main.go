@@ -26,7 +26,8 @@ package main
 
 import (
 	"flag"
-	"strings"
+	"log"
+	"os"
 
 	"github.com/pokstad/vsaur"
 )
@@ -40,13 +41,25 @@ var (
 	configPath = flag.String("config", defaultCfgPath, "path to config file")
 )
 
-func getChecks() []vsaur.Check {
-	checks := strings.Split
+func getChecks() []vsaur.CheckerFactory {
+	// get a list of checkers based on the "checks" flag
+	if *checkFlags == "" {
+		return vsaur.AllCheckerMakers()
+	}
 	return nil
 }
 
 func main() {
 	flag.Parse()
 
+	pwd, err := os.Getwd()
+	if err != nil {
+		log.Fatalf("unable to determine PWD: %s", err)
+	}
+
 	checks := getChecks()
+	for _, cf := range checks {
+		c := cf(pwd)
+		log.Printf("running %s checker", c.CheckName())
+	}
 }

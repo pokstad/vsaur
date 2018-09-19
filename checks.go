@@ -28,10 +28,10 @@ type CheckerFactory func(moddir string) Checker
 var allCheckers = map[string]CheckerFactory{}
 
 // AllCheckers returns a list of all known checker names
-func AllCheckers() []string {
-	var checkers []string
-	for k, _ := range allCheckers {
-		checkers = append(checkers, k)
+func AllCheckerMakers() []CheckerFactory {
+	var checkers []CheckerFactory
+	for _, v := range allCheckers {
+		checkers = append(checkers, v)
 	}
 	return checkers
 }
