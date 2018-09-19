@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/pokstad/vsaur/tree/master.svg?style=svg)](https://circleci.com/gh/pokstad/vsaur/tree/master)
+
 # VSaur = Vendorsaurus
 VSaur is shorthand for Vendorsaurus. Vendorsaurus is collection of utilities for maintaining versioned Go modules (a.k.a. vgo) usage in a project. It is designed to be used in CI/CD systems to automate best practices.
 
