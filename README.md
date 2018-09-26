@@ -2,7 +2,7 @@
 VSaur is shorthand for Vendorsaurus. Vendorsaurus is collection of utilities for maintaining versioned Go modules (a.k.a. vgo) usage in a project. It is designed to be used in CI/CD systems to automate best practices.
 
 | status | head of master |
-|---|---|
+|----------|---------------------|
 | builds in CI | [![CircleCI](https://circleci.com/gh/pokstad/vsaur/tree/master.svg?style=svg)](https://circleci.com/gh/pokstad/vsaur/tree/master) |
 | command documentation | [![GoDoc](https://godoc.org/github.com/pokstad/vsaur/cmd/vsaur?status.svg)](https://godoc.org/github.com/pokstad/vsaur/cmd/vsaur) |
 | library documentation | [![GoDoc](https://godoc.org/github.com/pokstad/vsaur?status.svg)](https://godoc.org/github.com/pokstad/vsaur) |
@@ -12,10 +12,10 @@ VSaur is shorthand for Vendorsaurus. Vendorsaurus is collection of utilities for
 Planned features:
 
 - Lint mod file (`go.mod`)
-	- Flag local path usage - should only be allowed during local development and not in commits to CI
+	- Flag local path usage - should only be allowed during local development and not in commits to CI (issue #1)
 - Lint sum file (`go.sum`)
-	- Flag mismatch of `go.sum` listing with what the actual project requires to compile
-- Verify vendor folder matches `go.mod` and `go.sum`
+	- Flag mismatch of `go.sum` listing with what the actual project requires to compile (issue #3)
+- Verify vendor folder matches `go.mod` and `go.sum` (issue #2)
 
 ## Install
 Vendorsaurus requires Go 1.11 or higher. To install, go get it:
